@@ -1,26 +1,36 @@
-import { useState } from 'react'
-import './css/App.css'
-
+import { useState } from "react";
+import Header from "./Header";
+import CreateRecipe from "./CreateRecipe";
+import Preview from "./Preview";
+import Footer from "./Footer";
+import "../css/App.css";
 function App() {
-  const [count, setCount] = useState(0)
+  const [recipe, setRecipe] = useState({});
+
+  const createRecipe = (description) => {
+    const updatedRecipe = {
+      title: description.title,
+      summary: description.summary,
+      portion: description.portion,
+      time: description.time,
+      ingredient: description.ingredient,
+      amount: description.amount,
+      instruction: description.instruction,
+      note: description.note,
+    };
+    setRecipe(updatedRecipe);
+  };
 
   return (
     <>
-
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <main>
+        <CreateRecipe onCreate={createRecipe} />
+        <Preview recipe={recipe} />
+      </main>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,45 @@
+.form-wrapper {
+  width: 400px;
+  height: 700px;
+  background-color: #91a296;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+label {
+  margin: 6px 0;
+}
+input,
+textarea {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+textarea {
+  resize: vertical;
+}
+
+.section {
+  display: flex;
+}
+
+.section div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section input {
+  width: 80%;
+}

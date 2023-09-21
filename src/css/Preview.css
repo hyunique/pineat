@@ -1,0 +1,8 @@
+.a4 {
+  width: 500px;
+  height: 800px;
+  color: green;
+  /* border: 1px solid grey; */
+  aspect-ratio: 21 / 29.7;
+  padding: 0 20px;
+}
