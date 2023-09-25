@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../css/CreateRecipe.css";
+import RenderButtons from "./RenderButtons";
+
 function CreateRecipe({ onCreate }) {
-  const [description, setDescription] = useState({
+  const [formData, setFormData] = useState({
     title: "",
     summary: "",
     portion: 0,
@@ -12,68 +14,27 @@ function CreateRecipe({ onCreate }) {
     note: "",
   });
 
-  function handleTitleChange(e) {
-    setDescription({
-      ...description,
-      title: e.target.value,
-    });
-  }
-  function handleSummaryChange(e) {
-    setDescription({
-      ...description,
-      summary: e.target.value,
-    });
-  }
-  function handlePortionChange(e) {
-    setDescription({
-      ...description,
-      portion: e.target.value,
-    });
-  }
-  function handleTimeChange(e) {
-    setDescription({
-      ...description,
-      time: e.target.value,
-    });
-  }
-  function handleIngredientChange(e) {
-    setDescription({
-      ...description,
-      ingredient: e.target.value,
-    });
-  }
-  function handleAmountChange(e) {
-    setDescription({
-      ...description,
-      amount: e.target.value,
-    });
-  }
-  function handleInstructionChange(e) {
-    setDescription({
-      ...description,
-      instruction: e.target.value,
-    });
-  }
-  function handleNoteChange(e) {
-    setDescription({
-      ...description,
-      note: e.target.value,
-    });
-  }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onCreate(description);
-    setDescription({
-      title: "",
-      summary: "",
-      portion: 0,
-      time: 0,
-      ingredient: "",
-      amount: 0,
-      instruction: "",
-      note: "",
-    });
+    onCreate(formData);
+    // setFormData({
+    //   title: "",
+    //   summary: "",
+    //   portion: 0,
+    //   time: 0,
+    //   ingredient: "",
+    //   amount: 0,
+    //   instruction: "",
+    //   note: "",
+    // });
   };
 
   return (
@@ -83,16 +44,18 @@ function CreateRecipe({ onCreate }) {
           <label className="label">Recipe Title</label>
           <input
             className="input"
-            value={description.title}
-            onChange={handleTitleChange}
+            value={formData.title}
+            name="title"
+            onChange={handleInputChange}
           />
         </div>
         <div className="input-wrap">
           <label className="label">Summary</label>
           <input
             className="input"
-            value={description.summary}
-            onChange={handleSummaryChange}
+            value={formData.summary}
+            name="summary"
+            onChange={handleInputChange}
           />
         </div>
         <div className="section">
@@ -100,24 +63,27 @@ function CreateRecipe({ onCreate }) {
             <label className="label">Portion</label>
             <input
               className="input"
-              value={description.portion}
-              onChange={handlePortionChange}
+              value={formData.portion}
+              name="portion"
+              onChange={handleInputChange}
             />
           </div>
           <div>
             <label className="label">Prep Time</label>
             <input
               className="input"
-              value={description.time}
-              onChange={handleTimeChange}
+              value={formData.time}
+              name="preptime"
+              onChange={handleInputChange}
             />
           </div>
           <div>
             <label className="label">Cook Time</label>
             <input
               className="input"
-              value={description.time}
-              onChange={handleTimeChange}
+              value={formData.time}
+              name="cooktime"
+              onChange={handleInputChange}
             />
           </div>
         </div>
@@ -126,15 +92,17 @@ function CreateRecipe({ onCreate }) {
           <input
             className="input"
             placeholder="e.g. Potato"
-            value={description.ingredient}
-            onChange={handleIngredientChange}
+            value={formData.ingredient}
+            name="ingredient"
+            onChange={handleInputChange}
           />
           <label className="label">Amount</label>
           <input
             className="input"
             placeholder="e.g. 1 kg"
-            value={description.amount}
-            onChange={handleAmountChange}
+            value={formData.amount}
+            name="amount"
+            onChange={handleInputChange}
           />
         </div>
 
@@ -142,19 +110,21 @@ function CreateRecipe({ onCreate }) {
           <label className="label ">Instruction</label>
           <textarea
             className="textarea"
-            value={description.instruction}
-            onChange={handleInstructionChange}
+            value={formData.instruction}
+            name="instruction"
+            onChange={handleInputChange}
           />
         </div>
         <div className="input-wrap">
           <label className="label ">Note</label>
           <textarea
             className="textarea"
-            value={description.note}
-            onChange={handleNoteChange}
+            value={formData.note}
+            name="note"
+            onChange={handleInputChange}
           />
         </div>
-        {/* <RenderButtons /> */}
+        <RenderButtons />
       </form>
     </div>
   );
