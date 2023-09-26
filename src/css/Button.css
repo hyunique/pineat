@@ -1,0 +1,13 @@
+.button-wrap {
+  display: flex;
+  justify-content: right;
+}
+
+button {
+  width: 100px;
+  height: 38px;
+  margin-left: 10px;
+  border: 1px solid #23452d;
+  border-radius: 10px;
+  background: white;
+}

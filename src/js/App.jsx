@@ -8,16 +8,17 @@ import "../css/App.css";
 function App() {
   const [recipe, setRecipe] = useState({});
 
-  const createRecipe = (description) => {
+  const createRecipe = (formData) => {
     const updatedRecipe = {
-      title: description.title,
-      summary: description.summary,
-      portion: description.portion,
-      time: description.time,
-      ingredient: description.ingredient,
-      amount: description.amount,
-      instruction: description.instruction,
-      note: description.note,
+      title: formData.title,
+      summary: formData.summary,
+      portion: formData.portion,
+      preptime: formData.preptime,
+      cooktime: formData.cooktime,
+      ingredient: formData.ingredient,
+      amount: formData.amount,
+      instruction: formData.instruction,
+      note: formData.note,
     };
     setRecipe(updatedRecipe);
   };

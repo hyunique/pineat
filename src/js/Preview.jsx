@@ -6,7 +6,8 @@ function Preview({ recipe }) {
     title,
     summary,
     portion,
-    time,
+    preptime,
+    cooktime,
     ingredient,
     amount,
     instruction,
@@ -21,8 +22,8 @@ function Preview({ recipe }) {
             Summary explanation of the dish{summary}
           </p>
           <h2>{portion}</h2>
-          <h2>{time}</h2>
-
+          <h2>{preptime}</h2>
+          <h2>{cooktime}</h2>
           <h2>
             {ingredient}
             {amount}
