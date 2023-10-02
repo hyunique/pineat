@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "../css/CreateRecipe.css";
 import RenderButtons from "./RenderButtons";
 import BasicInfo from "./BasicInfo";
@@ -13,11 +14,36 @@ function CreateRecipe({ onCreate }) {
     portion: 0,
     preptime: 0,
     cooktime: 0,
-    ingredient: "",
+    ingredient: [
+      {
+        id: uuidv4(),
+        name: "",
+        amount: "",
+      },
+    ],
     amount: 0,
     instruction: "",
     note: "",
   });
+
+  const addIngredient = () => {
+    setFormData({
+      ...formData,
+      ingredient: [
+        ...formData.ingredient,
+        { id: uuidv4(), name: "", amount: "" },
+      ],
+    });
+  };
+  const handleIngChange = (e, id) => {
+    setFormData({
+      ...formData,
+      ingredient: formData.ingredient.map((ing) => {
+        if (ing.id === id) ing[e.target.name] = e.target.value;
+        return ing;
+      }),
+    });
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +62,11 @@ function CreateRecipe({ onCreate }) {
     <div className="form-wrapper">
       <form onSubmit={handleSubmit}>
         <BasicInfo formData={formData} onChange={handleInputChange} />
-        <Ingredients formData={formData} onChange={handleInputChange} />
+        <Ingredients
+          formData={formData}
+          addIng={addIngredient}
+          onChange={handleIngChange}
+        />
         <Instruction formData={formData} onChange={handleInputChange} />
         <Notes formData={formData} onChange={handleInputChange} />
 

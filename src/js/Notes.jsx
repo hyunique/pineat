@@ -1,15 +1,19 @@
-function Notes({ formData, onChange }) {
+function Notes({ data, addContent }) {
   return (
     <div className="section-card">
       <div className="input-wrap">
         <label className="label ">Note</label>
-        <textarea
-          className="textarea"
-          value={formData.note}
-          name="note"
-          onChange={onChange}
-        />
+        <textarea className="textarea" name="note" id="note" />
       </div>
+      <button onClick={addContent}>+</button>
+
+      <>
+        {data.map((note) => {
+          <div key={note.id}>
+            <h2>{note.content}</h2>
+          </div>;
+        })}
+      </>
     </div>
   );
 }

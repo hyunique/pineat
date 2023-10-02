@@ -1,8 +1,10 @@
 import "../css/Button.css";
-function RenderButtons() {
+function RenderButtons({ onSubmit }) {
   return (
     <div className="button-wrap">
-      <button className="">Edit</button>
+      <button className="" onClick={onSubmit}>
+        Edit
+      </button>
       <button className="">Save</button>
     </div>
   );

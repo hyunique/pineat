@@ -1,11 +1,11 @@
-function BasicInfo({ formData, onChange }) {
+function BasicInfo({ data, onChange }) {
   return (
     <div className="section-card">
       <div className="input-wrap">
         <label className="label">Recipe Title</label>
         <input
           className="input"
-          value={formData.title}
+          value={data.title}
           name="title"
           onChange={onChange}
         />
@@ -14,7 +14,7 @@ function BasicInfo({ formData, onChange }) {
         <label className="label">Summary</label>
         <input
           className="input"
-          value={formData.summary}
+          value={data.summary}
           name="summary"
           onChange={onChange}
         />
@@ -24,7 +24,7 @@ function BasicInfo({ formData, onChange }) {
           <label className="label">Portion</label>
           <input
             className="input"
-            value={formData.portion}
+            value={data.portion}
             name="portion"
             onChange={onChange}
           />
@@ -33,7 +33,7 @@ function BasicInfo({ formData, onChange }) {
           <label className="label">Prep Time</label>
           <input
             className="input"
-            value={formData.preptime}
+            value={data.preptime}
             name="preptime"
             onChange={onChange}
           />
@@ -42,7 +42,7 @@ function BasicInfo({ formData, onChange }) {
           <label className="label">Cook Time</label>
           <input
             className="input"
-            value={formData.cooktime}
+            value={data.cooktime}
             name="cooktime"
             onChange={onChange}
           />
