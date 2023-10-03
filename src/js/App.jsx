@@ -66,26 +66,10 @@ function App() {
       },
     ]);
   };
-  // const handleInstructionChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setInstruction((prevIns) => ({
-  //     ...prevIns,
-  //     [name]: value,
-  //   }));
-  // };
-  // const handleNoteChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setNote((prevNote) => ({
-  //     ...prevNote,
-  //     [name]: value,
-  //   }));
-  // };
-
   const handleSubmit = (e) => {
+    // To prevent reset on button clicks
     e.preventDefault();
-    // createRecipe(recipe);
   };
-
   return (
     <>
       <Header />
@@ -93,14 +77,9 @@ function App() {
         <div className="form-wrapper">
           <form onSubmit={handleSubmit}>
             <BasicInfo data={basicInfo} onChange={handleInfoChange} />
-            <Ingredients
-              data={ingredient}
-              addIng={addIngredient}
-              // onChange={handleIngChange}
-            />
+            <Ingredients data={ingredient} addIng={addIngredient} />
             <Instruction data={instruction} addContent={addInsContent} />
             <Notes data={note} addNote={addNoteContent} />
-            {/* <RenderButtons /> */}
           </form>
         </div>
         <Preview

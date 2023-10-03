@@ -26,6 +26,9 @@ textarea {
   border-radius: 5px;
   border: none;
   box-sizing: border-box;
+  outline: none;
+  border-bottom: 2px solid #23452d;
+  background: #aec1b4;
 }
 textarea {
   resize: vertical;

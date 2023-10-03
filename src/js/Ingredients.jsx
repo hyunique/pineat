@@ -1,8 +1,10 @@
+import "../css/Ingredients.css";
+
 function ingredients({ data, addIng }) {
   return (
     <div className="section-card">
-      <div className="subSection">
-        <div className="input-wrap">
+      <div className="ingInput">
+        <div className="ingInput-wrap">
           <label className="label">Ingredient</label>
           <input
             className="input"
@@ -20,19 +22,23 @@ function ingredients({ data, addIng }) {
             name="amount"
           />
         </div>
-        <button onClick={addIng}>+</button>
+        <button className="addIngBtn" onClick={addIng}>
+          +
+        </button>
       </div>
 
       {data.map((ing) => (
-        <div className="subSection" key={ing.id}>
-          <div className="input-wrap">
-            <h2>{ing.name}</h2>
+        <div className="renderContainer" key={ing.id}>
+          <div className="dataContainer">
+            <div className="renderData">{ing.name}</div>
+            <div className="renderData">{ing.amount}</div>
           </div>
-          <div className="input-wrap">
-            <h2>{ing.amount}</h2>
+          <div className="btnContainer">
+            <button className="editBtn material-symbols-outlined">edit</button>
+            <button className="deleteBtn material-symbols-outlined">
+              close
+            </button>
           </div>
-          <button>Edit</button>
-          <button>Save</button>
         </div>
       ))}
     </div>

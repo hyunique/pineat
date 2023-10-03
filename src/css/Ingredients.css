@@ -1,0 +1,40 @@
+.ingInput {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 140px 140px 40px;
+  align-items: end;
+  justify-content: space-around;
+  text-align: left;
+}
+label {
+  margin: 0;
+}
+.addIngBtn {
+  width: 30px;
+  height: 30px;
+  background-color: #23452d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.renderContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.dataContainer {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btnContainer {
+  display: flex;
+}
+.btnContainer button {
+  background: none;
+  border: none;
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+}
