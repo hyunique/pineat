@@ -20,25 +20,9 @@ function App() {
     cooktime: 0,
   });
 
-  const [ingredient, setIngredient] = useState([
-    {
-      id: uuidv4(),
-      name: "",
-      amount: "",
-    },
-  ]);
-  const [instruction, setInstruction] = useState([
-    {
-      id: uuidv4(),
-      content: "",
-    },
-  ]);
-  const [note, setNote] = useState([
-    {
-      id: uuidv4(),
-      content: "",
-    },
-  ]);
+  const [ingredient, setIngredient] = useState([]);
+  const [instruction, setInstruction] = useState([]);
+  const [note, setNote] = useState([]);
 
   const handleInfoChange = (e) => {
     const { name, value } = e.target;
@@ -61,28 +45,27 @@ function App() {
     ]);
   };
 
-  function addInsContent() {
-    const noteValue = document.querySelector("#note");
+  const addInsContent = () => {
+    const insValue = document.querySelector("#instruction").value;
     setInstruction([
       ...instruction,
-      {
-        id: uuidv4(),
-        content: noteValue,
-      },
-    ]);
-  }
-
-  function addNoteContent() {
-    const insValue = document.querySelector("#instruction");
-
-    setNote([
-      ...note,
       {
         id: uuidv4(),
         content: insValue,
       },
     ]);
-  }
+  };
+
+  const addNoteContent = () => {
+    const noteValue = document.querySelector("#note").value;
+    setNote([
+      ...note,
+      {
+        id: uuidv4(),
+        content: noteValue,
+      },
+    ]);
+  };
   // const handleInstructionChange = (e) => {
   //   const { name, value } = e.target;
   //   setInstruction((prevIns) => ({
@@ -116,7 +99,7 @@ function App() {
               // onChange={handleIngChange}
             />
             <Instruction data={instruction} addContent={addInsContent} />
-            <Notes data={note} addContent={addNoteContent} />
+            <Notes data={note} addNote={addNoteContent} />
             {/* <RenderButtons /> */}
           </form>
         </div>

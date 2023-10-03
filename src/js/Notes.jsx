@@ -1,19 +1,19 @@
-function Notes({ data, addContent }) {
+function Notes({ data, addNote }) {
   return (
     <div className="section-card">
       <div className="input-wrap">
         <label className="label ">Note</label>
-        <textarea className="textarea" name="note" id="note" />
+        <input className="input" name="note" id="note" />
       </div>
-      <button onClick={addContent}>+</button>
+      <button onClick={addNote}>+</button>
 
-      <>
-        {data.map((note) => {
-          <div key={note.id}>
-            <h2>{note.content}</h2>
-          </div>;
-        })}
-      </>
+      {data.map((note) => (
+        <div className="subSection" key={note.id}>
+          <h2>{note.content}</h2>
+          <button>Edit</button>
+          <button>Save</button>
+        </div>
+      ))}
     </div>
   );
 }

@@ -5,13 +5,19 @@ function Instruction({ data, addContent }) {
         <label className="label ">Instruction</label>
         <textarea className="textarea" name="instruction" id="instruction" />
       </div>
-      <button onClick={addContent}>+</button>
+      <button id="insBtn" onClick={addContent}>
+        +
+      </button>
       <>
-        {data.map((ins) => {
-          <div key={ins.id}>
-            <h2>{ins.content}</h2>
-          </div>;
-        })}
+        {data.map((ins) => (
+          <div className="subSection" key={ins.id}>
+            <div className="input-wrap">
+              <h2>{ins.content}</h2>
+            </div>
+            <button>Edit</button>
+            <button>Save</button>
+          </div>
+        ))}
       </>
     </div>
   );
