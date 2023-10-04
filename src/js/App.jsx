@@ -12,11 +12,11 @@ import Footer from "./Footer";
 
 function App() {
   const [basicInfo, setInfo] = useState({
-    title: "",
-    summary: "",
-    portion: "",
+    title: "Recipe Title",
+    summary: "This is summary of recipe. Explain about the recipe.",
+    portion: "2",
     preptime: "",
-    cooktime: "",
+    cooktime: "30",
   });
 
   const [ingredient, setIngredient] = useState([]);

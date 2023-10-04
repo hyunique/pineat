@@ -3,19 +3,26 @@
   display: grid;
   grid-template-columns: 140px 140px 40px;
   align-items: end;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: left;
 }
-label {
-  margin: 0;
+hr {
+  border-top: 1px solid var(--second-color);
+}
+.btn-wrap {
+  display: flex;
+  justify-content: flex-end;
 }
 .addIngBtn {
+  display: flex;
   width: 30px;
   height: 30px;
   background-color: var(--primary-color);
   color: var(--point-color);
   border: none;
   border-radius: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .renderContainer {
@@ -37,4 +44,5 @@ label {
   width: 34px;
   height: 34px;
   font-size: 20px;
+  color: var(--point-color);
 }

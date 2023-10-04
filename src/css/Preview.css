@@ -15,7 +15,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 0 30px 0;
+  height: 170px;
 }
 .view-title {
   font-size: 2rem;
@@ -37,7 +37,7 @@ p {
   grid-template-columns: 30% 70%;
 }
 .view-ingredients {
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
 }
 .ing-container {
   display: flex;
@@ -46,7 +46,7 @@ p {
 .view-instruction,
 .view-note {
   text-align: left;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
@@ -57,7 +57,11 @@ p {
 .view-note {
   position: absolute;
   bottom: 0;
-  height: 200px;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 40px 40px 40px;
+  height: auto;
+  min-height: 200px;
   width: 100%;
 }
 

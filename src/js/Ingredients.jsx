@@ -4,7 +4,7 @@ function ingredients({ data, addIng }) {
   return (
     <div className="section-card">
       <div className="ingInput">
-        <div className="ingInput-wrap">
+        <div className="input-wrap">
           <label className="label">Ingredient</label>
           <input
             className="input"
@@ -22,11 +22,13 @@ function ingredients({ data, addIng }) {
             name="amount"
           />
         </div>
-        <button className="addIngBtn" onClick={addIng}>
-          +
-        </button>
+        <div className="btn-wrap">
+          <button className="addIngBtn" onClick={addIng}>
+            <span className="material-symbols-outlined">add</span>
+          </button>
+        </div>
       </div>
-
+      <hr />
       {data.map((ing) => (
         <div className="renderContainer" key={ing.id}>
           <div className="dataContainer">

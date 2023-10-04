@@ -1,4 +1,8 @@
 #instruction {
+  height: 300px;
+
+  overflow-y: hidden;
+}
+#note {
   height: 200px;
-  font-family: "Kaisei Opti", serif;
 }

@@ -24,12 +24,13 @@ function BasicInfo({ data, onChange }) {
           <label className="label">Portion</label>
           <input
             className="input"
+            type="number"
             value={data.portion}
             name="portion"
             onChange={onChange}
           />
         </div>
-        <div>
+        {/* <div>
           <label className="label">Prep Time</label>
           <input
             className="input"
@@ -37,11 +38,12 @@ function BasicInfo({ data, onChange }) {
             name="preptime"
             onChange={onChange}
           />
-        </div>
+        </div> */}
         <div>
           <label className="label">Cook Time</label>
           <input
             className="input"
+            type="number"
             value={data.cooktime}
             name="cooktime"
             onChange={onChange}
