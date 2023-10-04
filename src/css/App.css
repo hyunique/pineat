@@ -2,3 +2,76 @@ main {
   display: flex;
   max-width: 1440px;
 }
+
+/*Custom scrollbar*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--second-color);
+  border: 1px solid var(--second-color);
+}
+::-webkit-scrollbar-thumb {
+  border: 1px solid var(--second-color);
+  border-radius: 3px;
+  background: var(--primary-color);
+  transition: background 0.2s ease-in-out;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--third-color);
+}
+
+.form-wrapper {
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+label {
+  margin: 6px 0;
+}
+input {
+  height: 30px;
+}
+input,
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  border-bottom: 2px solid var(--primary-color);
+  background: var(--third-color);
+}
+textarea {
+  resize: vertical;
+}
+
+.subSection {
+  display: flex;
+}
+
+.subSection div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.subSection input {
+  width: 80%;
+}
+
+.section-card {
+  width: 400px;
+  height: auto;
+  background-color: var(--second-color);
+  border: 1px solid var(--point-color);
+  border-radius: 5px;
+  padding: 10px 20px 20px 20px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}

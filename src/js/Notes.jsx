@@ -1,19 +1,16 @@
-function Notes({ data, addNote }) {
+function Notes({ data, onChange }) {
   return (
     <div className="section-card">
       <div className="input-wrap">
         <label className="label ">Note</label>
-        <input className="input" name="note" id="note" />
+        <textarea
+          className="textarea"
+          name="note"
+          id="note"
+          value={data}
+          onChange={onChange}
+        />
       </div>
-      <button onClick={addNote}>+</button>
-
-      {data.map((note) => (
-        <div className="subSection" key={note.id}>
-          <h2>{note.content}</h2>
-          <button>Edit</button>
-          <button>Save</button>
-        </div>
-      ))}
     </div>
   );
 }

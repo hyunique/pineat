@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "../css/App.css";
-import "../css/CreateRecipe.css";
+
 import Header from "./Header";
 import BasicInfo from "./BasicInfo";
 import Ingredients from "./Ingredients";
 import Instruction from "./Instruction";
 import Notes from "./Notes";
-// import RenderButtons from "./RenderButtons";
 import Preview from "./Preview";
 import Footer from "./Footer";
 
@@ -15,14 +14,14 @@ function App() {
   const [basicInfo, setInfo] = useState({
     title: "",
     summary: "",
-    portion: 0,
-    preptime: 0,
-    cooktime: 0,
+    portion: "",
+    preptime: "",
+    cooktime: "",
   });
 
   const [ingredient, setIngredient] = useState([]);
-  const [instruction, setInstruction] = useState([]);
-  const [note, setNote] = useState([]);
+  const [instruction, setInstruction] = useState("");
+  const [note, setNote] = useState("");
 
   const handleInfoChange = (e) => {
     const { name, value } = e.target;
@@ -45,27 +44,15 @@ function App() {
     ]);
   };
 
-  const addInsContent = () => {
-    const insValue = document.querySelector("#instruction").value;
-    setInstruction([
-      ...instruction,
-      {
-        id: uuidv4(),
-        content: insValue,
-      },
-    ]);
+  const handleInsChange = (e) => {
+    const { value } = e.target;
+    setInstruction(value);
+  };
+  const handleNoteChange = (e) => {
+    const { value } = e.target;
+    setNote(value);
   };
 
-  const addNoteContent = () => {
-    const noteValue = document.querySelector("#note").value;
-    setNote([
-      ...note,
-      {
-        id: uuidv4(),
-        content: noteValue,
-      },
-    ]);
-  };
   const handleSubmit = (e) => {
     // To prevent reset on button clicks
     e.preventDefault();
@@ -78,8 +65,8 @@ function App() {
           <form onSubmit={handleSubmit}>
             <BasicInfo data={basicInfo} onChange={handleInfoChange} />
             <Ingredients data={ingredient} addIng={addIngredient} />
-            <Instruction data={instruction} addContent={addInsContent} />
-            <Notes data={note} addNote={addNoteContent} />
+            <Instruction data={instruction} onChange={handleInsChange} />
+            <Notes data={note} onChange={handleNoteChange} />
           </form>
         </div>
         <Preview
@@ -95,3 +82,24 @@ function App() {
 }
 
 export default App;
+// const addInsContent = () => {
+//   const insValue = document.querySelector("#instruction").value;
+//   setInstruction([
+//     ...instruction,
+//     {
+//       id: uuidv4(),
+//       content: insValue,
+//     },
+//   ]);
+// };
+
+// const addNoteContent = () => {
+//   const noteValue = document.querySelector("#note").value;
+//   setNote([
+//     ...note,
+//     {
+//       id: uuidv4(),
+//       content: noteValue,
+//     },
+//   ]);
+// };

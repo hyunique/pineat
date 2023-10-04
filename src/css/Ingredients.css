@@ -12,8 +12,8 @@ label {
 .addIngBtn {
   width: 30px;
   height: 30px;
-  background-color: #23452d;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--point-color);
   border: none;
   border-radius: 20px;
 }
