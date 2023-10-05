@@ -43,6 +43,10 @@ function App() {
       },
     ]);
   };
+  const removeIngredient = (id) => {
+    const updatedIngredients = ingredient.filter((ing) => ing.id !== id);
+    setIngredient(updatedIngredients);
+  };
 
   const handleInsChange = (e) => {
     const { value } = e.target;
@@ -64,7 +68,11 @@ function App() {
         <div className="form-wrapper">
           <form onSubmit={handleSubmit}>
             <BasicInfo data={basicInfo} onChange={handleInfoChange} />
-            <Ingredients data={ingredient} addIng={addIngredient} />
+            <Ingredients
+              data={ingredient}
+              addIng={addIngredient}
+              removeIng={removeIngredient}
+            />
             <Instruction data={instruction} onChange={handleInsChange} />
             <Notes data={note} onChange={handleNoteChange} />
           </form>

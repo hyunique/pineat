@@ -1,7 +1,7 @@
 import "../css/Ingredients.css";
 import { useState } from "react";
 
-function Ingredients({ data, addIng }) {
+function Ingredients({ data, addIng, removeIng }) {
   const [ingInput, setIngInput] = useState("");
   const [amountInput, setAmountInput] = useState("");
 
@@ -11,12 +11,13 @@ function Ingredients({ data, addIng }) {
   function handleAmountChange(e) {
     setAmountInput(e.target.value);
   }
-  const handleAddIng = () => {
+
+  function handleAddIng() {
     addIng(ingInput, amountInput);
     // Clear the input field
     setIngInput("");
     setAmountInput("");
-  };
+  }
   return (
     <div className="section-card">
       <div className="ingInput">
@@ -68,7 +69,10 @@ function Ingredients({ data, addIng }) {
             />
           </div>
           <div className="btnContainer">
-            <button className="deleteBtn material-symbols-outlined">
+            <button
+              className="deleteBtn material-symbols-outlined"
+              onClick={() => removeIng(ing.id)}
+            >
               close
             </button>
           </div>
