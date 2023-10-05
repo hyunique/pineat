@@ -17,10 +17,6 @@ function Preview({ basicInfo, ingredient, instruction, note }) {
                   </span>
                   {basicInfo.portion + " portions"}
                 </p>
-                {/* <p className="view-prep">
-                  <span className="material-symbols-outlined">schedule</span>
-                  {"Prep :" + basicInfo.preptime + " mins"}
-                </p> */}
                 <p className="view-cook">
                   <span className="material-symbols-outlined">schedule</span>
                   {basicInfo.cooktime + " mins"}

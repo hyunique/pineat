@@ -32,8 +32,6 @@ function App() {
   };
 
   const addIngredient = (ingInput, amountInput) => {
-    // let nameValue = document.querySelector("#name").value;
-    // let amountValue = document.querySelector("#amount").value;
     setIngredient([
       ...ingredient,
       {
@@ -43,6 +41,26 @@ function App() {
       },
     ]);
   };
+
+  function modifyIngredient(e) {
+    const { name, value, id } = e.target;
+
+    // Create a copy of the ingredients array with the modification
+    const updatedIngredients = ingredient.map((ingData) => {
+      if (ingData.id === id) {
+        // Update the corresponding ingredient's property (name or amount)
+        return {
+          ...ingData,
+          [name]: value,
+        };
+      }
+      return ingData;
+    });
+
+    // Update the state with the modified ingredients
+    setIngredient(updatedIngredients); // Assuming you have a state variable named setData
+  }
+
   const removeIngredient = (id) => {
     const updatedIngredients = ingredient.filter((ing) => ing.id !== id);
     setIngredient(updatedIngredients);
@@ -72,6 +90,7 @@ function App() {
               data={ingredient}
               addIng={addIngredient}
               removeIng={removeIngredient}
+              modifyIng={modifyIngredient}
             />
             <Instruction data={instruction} onChange={handleInsChange} />
             <Notes data={note} onChange={handleNoteChange} />

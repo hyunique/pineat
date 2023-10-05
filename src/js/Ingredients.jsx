@@ -1,7 +1,7 @@
 import "../css/Ingredients.css";
 import { useState } from "react";
 
-function Ingredients({ data, addIng, removeIng }) {
+function Ingredients({ data, addIng, removeIng, modifyIng }) {
   const [ingInput, setIngInput] = useState("");
   const [amountInput, setAmountInput] = useState("");
 
@@ -30,7 +30,6 @@ function Ingredients({ data, addIng, removeIng }) {
             onChange={handleIngChange}
             name="name"
             placeholder="e.g. Potato"
-            required
           />
         </div>
         <div className="input-wrap">
@@ -41,7 +40,6 @@ function Ingredients({ data, addIng, removeIng }) {
             onChange={handleAmountChange}
             id="amount"
             placeholder="e.g. 1 kg"
-            required
           />
         </div>
         <div className="btn-wrap">
@@ -50,21 +48,28 @@ function Ingredients({ data, addIng, removeIng }) {
           </button>
         </div>
       </div>
+
       <hr />
+
       {data.map((ing) => (
         <div className="renderContainer" key={ing.id}>
           <div className="input-wrap">
             <input
-              value={ing.name}
               className="input"
               name="name"
+              value={ing.name}
+              id={ing.id}
+              onChange={(e) => modifyIng(e)}
               placeholder="e.g. Potato"
             />
           </div>
           <div className="input-wrap">
             <input
-              value={ing.amount}
               className="input"
+              name="amount"
+              value={ing.amount}
+              id={ing.id}
+              onChange={(e) => modifyIng(e)}
               placeholder="e.g. 1 kg"
             />
           </div>
@@ -78,20 +83,6 @@ function Ingredients({ data, addIng, removeIng }) {
           </div>
         </div>
       ))}
-      {/* {data.map((ing) => (
-        <div className="renderContainer" key={ing.id}>
-          <div className="dataContainer">
-            <div className="renderData">{ing.name}</div>
-            <div className="renderData">{ing.amount}</div>
-          </div>
-          <div className="btnContainer">
-            <button className="editBtn material-symbols-outlined">edit</button>
-            <button className="deleteBtn material-symbols-outlined">
-              close
-            </button>
-          </div>
-        </div>
-      ))} */}
     </div>
   );
 }
