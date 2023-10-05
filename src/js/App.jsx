@@ -31,15 +31,15 @@ function App() {
     }));
   };
 
-  const addIngredient = () => {
-    let nameValue = document.querySelector("#name").value;
-    let amountValue = document.querySelector("#amount").value;
+  const addIngredient = (ingInput, amountInput) => {
+    // let nameValue = document.querySelector("#name").value;
+    // let amountValue = document.querySelector("#amount").value;
     setIngredient([
       ...ingredient,
       {
         id: uuidv4(),
-        name: nameValue,
-        amount: amountValue,
+        name: ingInput,
+        amount: amountInput,
       },
     ]);
   };
