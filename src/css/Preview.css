@@ -6,31 +6,27 @@ p {
 .a4 {
   position: relative;
   width: 210mm;
-  height: 296.994mm;
+  height: 297mm;
   color: black;
   background-color: white;
-  /* border: 1px solid grey; */
-  /* aspect-ratio: 21 / 29.7; */
-  padding: 20px;
+
   box-sizing: border-box;
 }
-@page {
-  size: a4 portrait;
-  margin: 10mm;
-}
+
 @media print {
-  body {
-    margin: 0;
+  @page {
+    size: a4 portrait;
   }
   .a4 {
-    /* width: 20cm;
-    height: 28.29cm; */
-    padding: 0;
     width: 210mm;
-    height: 296.994mm;
-    /* margin: 1cm ; */
+    height: 297mm;
   }
 }
+.padding-wrap {
+  /*Setting padding on .a4 causes weird overflow when generated as PDF file. So keeping them separately here and in .view-note*/
+  padding: 30px;
+}
+
 .basicInfo-container {
   display: flex;
   flex-direction: column;
@@ -66,7 +62,7 @@ p {
 .view-instruction,
 .view-note {
   text-align: left;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
@@ -75,14 +71,14 @@ p {
 }
 
 .view-note {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  box-sizing: border-box;
-  padding: 0 40px 40px 40px;
   height: auto;
   min-height: 200px;
-  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  /*Code below fixed PDF rendering bugs (overflowing)*/
+  bottom: 10px;
+  padding: 0 50px 30px 50px;
+  width: inherit;
 }
 
 .pdfBtn {

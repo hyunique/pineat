@@ -12,8 +12,8 @@ function Preview({ basicInfo, ingredient, instruction, note }) {
   });
   return (
     <div className="preview-wrap">
-      <div>
-        <section className="a4" ref={componentRef}>
+      <section className="a4" ref={componentRef}>
+        <div className="padding-wrap">
           <div className="basicInfo-container">
             <h2 className="view-title">{basicInfo.title}</h2>
             <p className="view-subtitle">{basicInfo.summary}</p>
@@ -33,7 +33,7 @@ function Preview({ basicInfo, ingredient, instruction, note }) {
 
           <div className="detailInfo">
             <div className="view-ingredients">
-              Ingredients
+              Ingredients <br />
               {ingredient.map((ing) => (
                 <div className="ing-container" key={ing.id}>
                   <p className="view-ing">{ing.name}</p>
@@ -41,12 +41,17 @@ function Preview({ basicInfo, ingredient, instruction, note }) {
                 </div>
               ))}
             </div>
-            <p className="view-instruction">{instruction}</p>
+            <p className="view-instruction">
+              Direction <br />
+              {instruction}
+            </p>
           </div>
-
-          <p className="view-note">{note}</p>
-        </section>
-      </div>
+        </div>
+        <p className="view-note">
+          Note <br />
+          {note}
+        </p>
+      </section>
 
       <button className="pdfBtn" onClick={handlePrint}>
         <span className="material-symbols-outlined">download</span>PDF
