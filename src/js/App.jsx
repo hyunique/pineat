@@ -79,6 +79,7 @@ function App() {
     // To prevent reset on button clicks
     e.preventDefault();
   };
+
   return (
     <>
       <Header />
@@ -101,6 +102,8 @@ function App() {
           ingredient={ingredient}
           instruction={instruction}
           note={note}
+          // handlePrint={handlePrint}
+          // componentRef={componentRef}
         />
       </main>
       <Footer />

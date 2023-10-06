@@ -4,12 +4,32 @@ p {
   line-height: 1.8;
 }
 .a4 {
-  width: 500px;
-  height: 740px;
+  position: relative;
+  width: 210mm;
+  height: 296.994mm;
   color: black;
+  background-color: white;
   /* border: 1px solid grey; */
-  aspect-ratio: 21 / 29.7;
-  padding: 0 20px;
+  /* aspect-ratio: 21 / 29.7; */
+  padding: 20px;
+  box-sizing: border-box;
+}
+@page {
+  size: a4 portrait;
+  margin: 10mm;
+}
+@media print {
+  body {
+    margin: 0;
+  }
+  .a4 {
+    /* width: 20cm;
+    height: 28.29cm; */
+    padding: 0;
+    width: 210mm;
+    height: 296.994mm;
+    /* margin: 1cm ; */
+  }
 }
 .basicInfo-container {
   display: flex;
@@ -46,7 +66,7 @@ p {
 .view-instruction,
 .view-note {
   text-align: left;
-  /* border: 1px solid gray; */
+  border: 1px solid gray;
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
