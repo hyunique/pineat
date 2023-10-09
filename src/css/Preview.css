@@ -5,8 +5,10 @@ p {
   line-height: 1.8;
 }
 .a4 {
-  /* transform-origin: top right; */
-  /* transform: scale(0.8); */
+  transform-origin: top right;
+  transform: scale(0.8);
+  margin-left: -150px;
+  margin-bottom: -160px;
   position: relative;
   width: 210mm;
   height: 297mm;
@@ -114,4 +116,28 @@ hr {
 .pdfBtn:hover {
   background-color: var(--third-color);
   color: var(--primary-color);
+}
+
+@media only screen and (max-width: 1100px) {
+  .a4 {
+    transform: scale(0.6);
+    margin-left: -320px;
+    margin-bottom: -440px;
+  }
+}
+@media only screen and (max-width: 920px) {
+  main {
+    flex-direction: column;
+  }
+  .form-wrapper {
+    height: 70vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .a4 {
+    transform: scale(0.4);
+    margin-left: -440px;
+    margin-bottom: -670px;
+  }
 }

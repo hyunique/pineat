@@ -83,3 +83,17 @@ textarea {
   margin-bottom: 8px;
   box-sizing: border-box;
 }
+
+@media only screen and (max-width: 920px) {
+  .section-card {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .section-card {
+    width: 360px;
+  }
+  .form-wrapper {
+    margin: 0 14px 30px 14px;
+  }
+}
