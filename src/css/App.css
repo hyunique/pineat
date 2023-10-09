@@ -22,8 +22,9 @@ main {
 }
 
 .form-wrapper {
-  height: 80vh;
+  height: 90vh;
   overflow-y: auto;
+  margin: 0 14px;
 }
 
 .input-wrap {
@@ -38,6 +39,9 @@ label {
 }
 input {
   height: 30px;
+}
+input:focus {
+  border-bottom-width: 3px;
 }
 input,
 textarea {

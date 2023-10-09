@@ -1,4 +1,3 @@
-// import { PreviewA4 } from "@diagoriente/react-preview-a4";
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 // import { ComponentToPrint } from "./ComponentToPrint";
@@ -30,10 +29,12 @@ function Preview({ basicInfo, ingredient, instruction, note }) {
               </p>
             </div>
           </div>
+          <hr />
 
           <div className="detailInfo">
             <div className="view-ingredients">
-              Ingredients <br />
+              <span className="info-title">Ingredients</span> <br />
+              <br />
               {ingredient.map((ing) => (
                 <div className="ing-container" key={ing.id}>
                   <p className="view-ing">{ing.name}</p>
@@ -41,16 +42,19 @@ function Preview({ basicInfo, ingredient, instruction, note }) {
                 </div>
               ))}
             </div>
-            <p className="view-instruction">
-              Direction <br />
-              {instruction}
-            </p>
+            <div className="view-instruction">
+              <span className="info-title">Direction</span> <br />
+              <br />
+              <p>{instruction}</p>
+            </div>
           </div>
         </div>
-        <p className="view-note">
-          Note <br />
-          {note}
-        </p>
+        <div className="view-note">
+          <hr />
+          <span className="info-title">Note</span> <br />
+          <br />
+          <p>{note}</p>
+        </div>
       </section>
 
       <button className="pdfBtn" onClick={handlePrint}>

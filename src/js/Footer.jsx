@@ -1,6 +1,13 @@
 function Footer() {
   return (
-    <footer>
+    <footer
+      style={{
+        display: "flex",
+        height: "80px",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <p>
         @
         <a

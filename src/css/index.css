@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Roboto+Serif:opsz@8..144&display=swap");
 
 :root {
   --primary-color: #23452d;
@@ -6,17 +6,19 @@
   --third-color: #b8cbbe;
   --point-color: white;
 
-  --font-family: "Kaisei Opti", serif;
+  --font-family1: "Kaisei Opti", serif;
+  --font-family2: "Roboto Serif", serif;
 }
 body {
   margin: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow-x: hidden;
   background-color: var(--primary-color);
   color: white;
   font-size: 1rem;
-  font-family: var(--font-family);
+  font-family: var(--font-family1);
   text-align: center;
 }
