@@ -17,6 +17,7 @@ function Ingredients({ data, addIng, removeIng, modifyIng }) {
     // Clear the input field
     setIngInput("");
     setAmountInput("");
+    document.querySelector("#name").focus();
   }
   return (
     <div className="section-card">
