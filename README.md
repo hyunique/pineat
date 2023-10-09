@@ -4,6 +4,8 @@ This project was started from personal need of editing and writing notes on reci
 No ingredients and appliences works exactly the same as original recipe, especially writer and user lives in different country. 
 Users of this app will be able to save their favorite recipes in their own style and language, with notes.
 
+[Live Demo]([github.com/gregnb/react-to-print](https://pineat.netlify.app/))
+
 ![pineat-mockup](https://github.com/hyunique/pineat/assets/92627293/8cd6418e-7e35-4a08-8565-62e75f7e66db)
 
 
