@@ -38,7 +38,7 @@ As a result I decided to build this program to do that all, to edit recipes for 
 ##  What I learned
 
 * Form formation and controll with React
-* Difference between input with and without value attribute in React
+* Difference between input with and without value attribute in React (Controlled vs Uncontrolled input)
 * useState() in React
 
 ## Possible Feature Updates
