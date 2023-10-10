@@ -1,8 +1,9 @@
 # PinEat
 Simple app for converting recipes to PDF file.
-This project was started from personal need of editing and writing notes on recipes that were tried.
-No ingredients and appliences works exactly the same as original recipe, especially writer and user lives in different country. 
-Users of this app will be able to save their favorite recipes in their own style and language, with notes.
+This project was started from personal need :
+I like to try different recipes, either cooking or baking, and I realized no ingredients and appliences work exactly the same as the original recipe, especially if the writer lives in different country.
+I get these recipes from all over the internet, (youtube, blogs, instagram, books and etc) and it became hard to keep those difference sources with the comment I had of the recipe.
+As a result I decided to build this program to do that all, to edit recipes for myself, to simplify layout design process, add notes if I had it and save it in a file so that I can print them out or view it on my ipad.
 
 [Live Demo]([github.com/gregnb/react-to-print](https://pineat.netlify.app/))
 
@@ -44,4 +45,6 @@ Users of this app will be able to save their favorite recipes in their own style
 * Various theme/color for page preview
 * Index section
 * Image upload function for the recipe
+* Fetch recipes from links and convert automatically
+* Function to create account and save recipes
 
